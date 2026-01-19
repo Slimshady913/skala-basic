@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>변환과 전환 효과 예시</title>
+    <style>
+        /* 기본 레이아웃 설정 */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 20px;
+            font-family: sans-serif;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        /* 1. 상단 박스 스타일링 */
+        #target-box {
+            width: 150px;
+            height: 150px;
+            background-color: #4CAF50; /* 기본 녹색 */
+            border-radius: 15px;      /* 라운드 곡선 처리 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            
+            /* 수치 변화를 부드럽게 만드는 transition 설정 */
+            transition: background-color 0.5s ease, transform 0.5s ease;
+        }
+
+        /* 2. 호버 시 배경색 노란색으로 변경 */
+        #target-box:hover {
+            background-color: #FFEB3B; /* 노란색 */
+            color: #333;
+        }
+
+        /* 3. 버튼 클릭 시 적용될 회전 클래스 */
+        .rotated {
+            transform: rotate(45deg);
+        }
+
+        /* 버튼 스타일링 */
+        #action-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #action-btn:active {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Transform and Transition Example</h2>
+
+    <div id="target-box">Hover me!</div>
+
+    <button id="action-btn">Click Me!</button>
+
+    <script>
+        // 버튼 클릭 시 박스에 'rotated' 클래스를 토글(추가/제거)합니다.
+        const box = document.getElementById('target-box');
+        const btn = document.getElementById('action-btn');
+
+        btn.addEventListener('click', () => {
+            box.classList.toggle('rotated');
+        });
+    </script>
+
+</body>
+</html>
