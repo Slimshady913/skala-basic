@@ -1,0 +1,32 @@
+ * {
+     font-family: 'franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }
+ 
+body {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬은 유지 */
+    align-items: flex-start;  /* 세로 정렬을 '중앙'에서 '시작점(상단)'으로 변경 */
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding-top: 50px;       /* 상단에서 적절히 떨어지도록 여백 추가 */
+}
+ h1 {
+     color: green;
+     text-align: center;
+     font-size: 72px;
+ }
+
+ p {
+     font-size: 24px;
+     text-align: center;
+ }
+
+ .large {
+     font-size: 48px;
+     font-style: italic;
+ }
+
+ .orange {
+     color: orange;
+     font-weight: bolder;
+ }

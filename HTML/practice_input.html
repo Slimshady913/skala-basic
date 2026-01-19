@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>주간 시간표</title>
+</head>
+
+<body>
+
+    <form>
+        <!-- 텍스트 입력-->
+        <label for="username">사용자 이름:</label>
+        <input type="text" id="username" name="username" required><br>
+        <!-- 이메일 입력-->
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" required><br>
+        <!-- 비밀번호 입력-->
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required><br>
+        <!-- 체크박스-->
+        <label for="newsletter">뉴스레터 구독:</label>
+        <input type="checkbox" id="newsletter" name="newsletter"><br>
+        <!-- 라디오 버튼-->
+        <label for="gender">성별:</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">남성</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">여성</label><br>
+        <button type="submit">제출</button>
+    </form>
+
+    <form>
+        <fieldset>
+            <legend>회원가입</legend>
+            <labelfor="username">사용자이름:</label>
+                <inputtype="text"id="username"name="username"required><br>
+                    <labelfor="email">이메일:</label>
+                        <inputtype="email"id="email"name="email"required><br>
+                            <labelfor="password">비밀번호:</label>
+                                <inputtype="password"id="password"name="password"required><br>
+        </fieldset>
+        <fieldset>
+            <legend>성별</legend>
+            <labelfor="male">남성</label>
+                <inputtype="radio"id="male"name="gender"value="male"required>
+                    <labelfor="female">여성</label>
+                        <inputtype="radio"id="female"name="gender"value="female">
+        </fieldset>
+        <buttontype="submit">회원가입</button>
+    </form>
+
+    <body>
+        <h2>좋아하는 과일을 선택하세요</h2>
+        <select id="fruitSelect">
+            <option value="">-- 과일 선택--</option>
+            <option value="사과">사과</option>
+            <option value="바나나">바나나</option>
+            <option value="포도">포도</option>
+            <option value="오렌지">오렌지</option>
+        </select>
+    </body>
+
+    <body>
+        <button id="myButton">클릭하세요</button>
+        <script>
+            const button = document.getElementById("myButton");
+            button.addEventListener("click", () => {
+                alert("버튼이클릭되었습니다!");
+            });
+        </script>
+    </body>
+</body>
+
+</html>

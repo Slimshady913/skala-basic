@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>심플 웹 에디터</title>
+</head>
+<body>
+
+    <h2>심플 웹 에디터</h2>
+
+    <p>
+        <button onclick="document.execCommand('bold')"><b>굵게</b></button>
+        <button onclick="document.execCommand('italic')"><i>기울임</i></button>
+        <button onclick="document.execCommand('underline')"><u>밑줄</u></button>
+        
+        <select id="colorSelect" 
+                onchange="document.execCommand('foreColor', false, this.value); this.style.borderBottomColor = this.value;" 
+                style="width: 45px; height: 24px; vertical-align: middle; border: 1px solid #ccc; border-bottom: 4px solid #000; cursor: pointer;">
+            <option value="#000000">검정</option>
+            <option value="#ff0000" style="color: red;">빨강</option>
+            <option value="#0000ff" style="color: blue;">파랑</option>
+        </select>
+
+        <select onchange="document.execCommand('formatBlock', false, this.value)">
+            <option value="p">본문</option>
+            <option value="h1">제목 1</option>
+            <option value="h2">제목 2</option>
+            <option value="h3">제목 3</option>
+        </select>
+
+        <button onclick="save()">저장</button>
+    </p>
+
+    <fieldset>
+        <div id="editor" contenteditable="true" spellcheck="true" style="min-height: 150px; outline: none;">
+            여기에 문장을 입력하고 단어에 원하는 스타일을 적용해 보세요.
+        </div>
+    </fieldset>
+
+    <br>
+
+    <h3>저장된 HTML 결과</h3>
+    <fieldset style="background-color: #f0f0f0; border: 1px dashed #ccc;">
+        <div id="result" style="min-height: 50px; padding: 10px; word-break: break-all;">
+            </div>
+    </fieldset>
+
+    <script>
+        // 저장 기능 함수: innerHTML을 가져와서 텍스트로 출력
+        function save() {
+            const content = document.getElementById('editor').innerHTML;
+            document.getElementById('result').innerText = content;
+        }
+    </script>
+
+</body>
+</html>

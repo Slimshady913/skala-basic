@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위치 속성 예제</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            margin-bottom: 30px;
+            border: 2px solid #ccc;
+            padding: 10px;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            font-weight: bold;
+        }
+        
+        .static-box {
+            position: static;
+            background-color: #2ecc71;
+        }
+        
+        .relative-box {
+            position: relative;
+            top: 20px;
+            left: 30px;
+            background-color: #e74c3c;
+        }
+        
+        .absolute-box {
+            position: absolute;
+            top: 50px;
+            left: 150px;
+            background-color: #f39c12;
+        }
+        
+        .fixed-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #9b59b6;
+            z-index: 100;
+        }
+        
+        .sticky-box {
+            position: sticky;
+            top: 0;
+            background-color: #1abc9c;
+            z-index: 50;
+        }
+        
+        .relative-container {
+            position: relative;
+            margin-top: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box static-box">Static</div>
+    </div>
+
+    <div class="container">
+        <div class="box relative-box">Relative</div>
+    </div>
+
+    <div class="container relative-container">
+        <div class="box absolute-box">Absolute</div>
+    </div>
+
+    <div class="container">
+        <div class="box sticky-box">Sticky</div>
+        <p>스크롤하면서 sticky 속성 확인하세요.</p>
+    </div>
+
+    <div class="box fixed-box">Fixed</div>
+
+    <div style="height: 500px; background-color: #f0f0f0; padding: 20px;">
+        <p>스크롤 공간입니다. Fixed 박스의 동작을 확인하세요.</p>
+    </div>
+</body>
+</html>
