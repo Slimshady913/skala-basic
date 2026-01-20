@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍길동 변신 프로그램</title>
+</head>
+<body>
+
+    <h1 id="display"></h1>
+
+    <script>
+        const displayElement = document.getElementById("display"); 
+
+        function transform(input) {
+            if (input && input.trim() !== "") {
+                displayElement.textContent = `홍길동 변신-${input}!`;
+            } else {
+                displayElement.textContent = "연기처럼 사라졌습니다.";
+            }
+        }
+
+        const userInput = prompt("홍길동이 무엇으로 변신할까요?");
+
+        transform(userInput);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국어 판단</title>
+</head>
+<body>
+    <script>
+        function isKorean(text) {
+            // 정규표현식 설명:
+            // ^[가-힣]+$ : 처음부터 끝까지 '완성형 한글'로만 이루어져 있는지 검사
+            const koreanRegex = /^[가-힣]+$/;
+            return koreanRegex.test(text);
+        }
+
+        // 1. 프롬프트로 입력 받기
+        const message = prompt("이름을 입력하세요:");
+
+        // 2. 입력값이 있을 경우에만 실행
+        if (message !== null && message.trim() !== "") {
+            if (isKorean(message)) {
+                document.write(`<h1>결과</h1>`);
+                document.write(`<p>입력한 이름: <b>[${message}]</b></p>`);
+                document.write(`<p style="color: blue;">정확한 한글 이름입니다. (true)</p>`);
+            } else {
+                document.write(`<h1>결과</h1>`);
+                document.write(`<p>입력한 이름: <b>[${message}]</b></p>`);
+                document.write(`<p style="color: red;">영어나 숫자, 혹은 자음/모음만 있는 혼합 형태입니다. (false)</p>`);
+            }
+        } else if (message !== null) {
+            document.write("이름을 입력하지 않으셨습니다.");
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>식량 분배 결과</title>
+    <style>
+        table { border-collapse: collapse; width: 50%; margin-top: 20px; }
+        th, td { border: 1px solid #444; padding: 10px; text-align: center; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+    <h1>식량 분배 결과 테이블</h1>
+
+    <script>
+        const foods = [
+            "쌀", "보리", "콩", "감자", "양파",
+            "마늘", "배추", "무", "고구마", "호박"
+        ];
+
+        const poors = ["철수", "영희", "민수"];
+        const results = poors.map(name => ({
+            name: name,
+            items: []
+        }));
+
+        foods.forEach((food, index) => {
+            const personIndex = index % poors.length;
+            results[personIndex].items.push(food);
+        });
+
+        let tableHTML = "<table>";
+        tableHTML += "<thead><tr><th>이름</th><th>식량</th></tr></thead>";
+        tableHTML += "<tbody>";
+
+        results.forEach(result => {
+            tableHTML += "<tr>";
+            tableHTML += `<td>${result.name}</td>`;
+            tableHTML += `<td>${result.items.join(", ")}</td>`;
+            tableHTML += "</tr>";
+        });
+
+        tableHTML += "</tbody></table>";
+
+        document.write(tableHTML);
+    </script>
+
+</body>
+</html>

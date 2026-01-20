@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 객체</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name: "홍길동",
+            age: 30,
+            skills: ["검술", "변신", "월담"],
+            address: {
+                city: "서울",
+                zipCode: "12345"
+            },
+        };
+
+        const alice = {...person};
+        alice.name = "앨리스";
+        alice.age = 31;
+
+    </script>
+</body>
+</html>

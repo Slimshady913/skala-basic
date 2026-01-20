@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 테이블 형식으로 출력</title>
+</head>
+<body>
+    <script>
+        const arr = [
+            ["이름", "나이", "전공"],
+            ["최태성", 26, "데이터사이언스"],
+            ["김철수", 24, "컴퓨터공학"],
+            ["이영희", 23, "소프트웨어공학"]
+        ];
+
+        arr.length = 0;
+        console.table(arr);
+        console.log(arr.length);
+    </script>
+</body>
+</html>
