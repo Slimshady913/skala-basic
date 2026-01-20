@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시간 예제</title>
+</head>
+<body>
+    <script>
+        function formatDate(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+        const now = new Date();
+        console.log(now.toString());
+        console.log(now.toISOString());
+        console.log(now.toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }));
+        console.log(now.getFullYear(), now.getMonth() + 1, now.getDate());
+        console.log(formatDate(now));
+
+        // 30일 전 날짜
+        const oneMonthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+        console.log(formatDate(oneMonthAgo));
+
+        console.log(now.getTime());
+        console.log(Date.now());
+    </script>
+</body>
+</html>

@@ -17,10 +17,14 @@
             },
         };
 
-        const alice = {...person};
+        const alice = structuredClone(person);
         alice.name = "앨리스";
         alice.age = 31;
 
+        alice.address.city = "뉴욕";
+        alice.skills.push("마법");
+
+        console.log(person, alice);
     </script>
 </body>
 </html>
