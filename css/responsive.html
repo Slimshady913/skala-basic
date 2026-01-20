@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid 레이아웃 반응형 웹</title>
+    <style>
+        /* 기본 스타일 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+
+        /* 그리드 컨테이너 설정 */
+        .container {
+            display: grid;
+            width: 100%;
+            max-width: 800px;
+            gap: 10px;
+            /* 모바일 우선(Mobile First): 1열 레이아웃 */
+            grid-template-areas: 
+                "header"
+                "main"
+                "sidebar"
+                "footer";
+        }
+
+        /* 시맨틱 태그별 그리드 영역 지정 및 스타일 */
+        header {
+            grid-area: header;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            grid-area: main;
+            background-color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        aside {
+            grid-area: sidebar;
+            background-color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* 미디어 쿼리: 화면 너비가 600px 이상일 때 (태블릿/PC) */
+        @media (min-width: 600px) {
+            .container {
+                /* 2열 레이아웃으로 변경 */
+                grid-template-columns: 1fr 3fr; /* 사이드바 1 : 메인 3 비율 */
+                grid-template-areas: 
+                    "header header"
+                    "sidebar main"
+                    "footer footer";
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>헤더</header>
+        <aside>사이드바</aside>
+        <main>메인 콘텐츠</main>
+        <footer>푸터</footer>
+    </div>
+
+</body>
+</html>

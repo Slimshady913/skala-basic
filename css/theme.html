@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테마 전환 예제</title>
+    <style>
+        /* 1. CSS 사용자 정의 변수 설정 */
+        :root {
+            --bg-color: #ffffff;
+            --title-color: #3498db;
+            --text-color: #333333;
+            --radio-text-color: #000000;
+        }
+
+        /* 2. 다크 모드 시 변수 값 변경 */
+        body.dark-mode {
+            --bg-color: #1a1a1a;
+            --title-color: #5dade2;
+            --text-color: #ffffff;
+            --radio-text-color: #ffffff;
+        }
+
+        /* 3. 변수를 활용한 스타일 적용 */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin: 50px;
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .theme-switcher {
+            color: var(--radio-text-color);
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .theme-switcher label {
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        h1 {
+            color: var(--title-color);
+            font-size: 32px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="theme-switcher">
+        <label>
+            <input type="radio" name="theme" value="white" checked> 화이트 테마
+        </label>
+        <label>
+            <input type="radio" name="theme" value="dark"> 다크 테마
+        </label>
+    </div>
+
+    <div class="content">
+        <h1>테마 전환 예제</h1>
+        <p>CSS 사용자 정의 변수(Custom Variables)를 활용하면 <br>
+           자바스크립트로 일일이 스타일을 수정하지 않아도 효율적으로 테마를 바꿀 수 있습니다.</p>
+    </div>
+
+    <script>
+        // 4. 자바스크립트 로직
+        const radioButtons = document.querySelectorAll('input[name="theme"]');
+
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'dark') {
+                    // body에 dark-mode 클래스 추가
+                    document.body.classList.add('dark-mode');
+                } else {
+                    // body에서 dark-mode 클래스 제거
+                    document.body.classList.remove('dark-mode');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
