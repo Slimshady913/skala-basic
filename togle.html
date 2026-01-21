@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 스타일 조작 - 토글</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            color: red;
+            font-weight: bold;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="targetText">이 문장을 강조해보세요!</p>
+        
+        <button id="toggleBtn">강조 토글</button>
+    </div>
+    <script>
+        const targetText = document.getElementById('targetText');
+        const toggleBtn = document.getElementById('toggleBtn');
+
+        toggleBtn.addEventListener('click', () => {
+            targetText.classList.toggle('highlight');
+        });
+    </script>
+
+</body>
+</html>

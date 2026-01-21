@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 등록 방식</title>
+</head>
+<body>
+    <h1>이벤트 등록 방식</h1>
+    <div id="eventSection" style="width: 300px; height: 100px; border: 1px solid black; margin: 20px; padding:10px; cursor: pointer;">
+        <button id="eventButton">클릭해보세요!</button>
+        <p id="eventOutput">출력될 내용</p>
+    </div>
+
+    <script>
+        const eventButton = document.getElementById('eventButton');
+        const eventOutput = document.getElementById('eventOutput');
+        const eventSection = document.getElementById('eventSection');
+
+        // [자식 버튼 이벤트]
+        eventButton.addEventListener('click', (e) => {
+            // 부모 클릭으로 인해 실행될 때 무한 루프가 생기지 않도록 버블링 방지
+            e.stopPropagation(); 
+            eventOutput.innerText = '내 버튼 또는 부모 영역이 클릭되었습니다!';
+        });
+
+        // [부모 섹션 이벤트]
+        eventSection.addEventListener('click', (e) => {
+            alert('섹션이 클릭되었습니다!');
+            
+            // 사용자가 버튼을 직접 클릭한 게 아니라면, 버튼 이벤트를 강제로 실행시킴
+            if (e.target !== eventButton) {
+                eventButton.click();
+            }
+        });
+    </script>
+</body>
+</html>
