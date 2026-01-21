@@ -1,8 +1,9 @@
-import { isEmpty } from "./common.js";
+import { isEmpty, formatDate } from "./common.js";
 
 const loginButton = document.getElementById("loginButton");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
+const date = document.getElementById("date");
 
 loginButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -12,4 +13,10 @@ loginButton.addEventListener("click", (e) => {
         return;
     }
     console.log("로그인 성공");
+});
+
+date.addEventListener("change", (e) => {
+    const selectedDate = new Date(e.target.value);
+    email.value = formatDate(selectedDate);
+    console.log("선택된 날짜:",selectedDate, e.target.value, typeof e.target.value);
 });
