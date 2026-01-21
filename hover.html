@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Class 제어 예제</title>
+    <style>
+        /* 기본 버튼 스타일 */
+        .button-normal {
+            background-color: green;
+            padding: 20px;
+            text-align: center;
+            border: none;
+            color: black;
+            transition: 0.3s;
+            cursor: default; /* 기본 커서 */
+        }
+
+        /* 마우스를 올렸을 때 적용할 클래스 */
+        .button-hover {
+            background-color: skyblue;
+            color: white;
+            cursor: wait;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hover 대신 Class 제어 사용</h1>
+    <button id="myButton" class="button-normal">마우스를 올려보세요!</button>
+
+    <script>
+        const btn = document.getElementById('myButton');
+
+        // 마우스를 올렸을 때 클래스 추가
+        btn.addEventListener('mouseover', () => {
+            btn.classList.add('button-hover');
+        });
+
+        // 마우스가 벗어났을 때 클래스 제거
+        btn.addEventListener('mouseout', () => {
+            btn.classList.remove('button-hover');
+        });
+    </script>
+</body>
+</html>

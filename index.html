@@ -7,8 +7,27 @@
 </head>
 <body>
     <h1>Document Object Model</h1>
-    <input type="text" id="inputField" value="입력">
-    <button id="changeTextButton">클릭</button>
-    <p id="outputField">This text will change.</p>
+    <input id="inputField">
+    <button id="clickButton">클릭</button>
+    <div id="outputField"></div>
+
+    <script>
+        const inputField = document.getElementById('inputField');
+        const clickButton = document.getElementById('clickButton');
+        const outputField = document.getElementById('outputField');
+
+        console.log(inputField, clickButton, outputField);
+
+        const newParagraph = document.createElement('p');
+        outputField.appendChild(newParagraph);
+
+        function doClick() {
+            const userInput = inputField.value;
+            console.log(userInput);
+            newParagraph.innerHTML = `입력한 값: ${userInput}`;
+        }
+
+        clickButton.addEventListener('click', doClick);
+    </script>
 </body>
 </html>
